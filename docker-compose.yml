@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  php:
+    build: .
+    volumes: 
+      - ./happs:/var/www
+    ports:
+      - '8000:80'
+  mysql:
+    image: mysql:5.7
+    ports:
+      – 13306:3306
+    environment:
+      MYSQL_DATABASE: happs
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
